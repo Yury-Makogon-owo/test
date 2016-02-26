@@ -1,0 +1,26 @@
+CACHE MANIFEST
+
+CACHE:
+# css files
+/css/bootstrap.min.css
+/css/angular.treeview.css
+/css/cc.css
+/css/ngToast.min.css
+/css/ngToast-animations.min.css
+/css/angular-loading-bar.min.css
+
+/js/lib/angular.min.js
+/js/lib/angular-route.min.js
+/js/lib/angular.treeview.min.js
+/js/lib/ui.bootstrap.min.js
+/js/lib/angular-animate.min.js
+/js/lib/angular-sanitize.min.js
+#/js/lib/ngToast.min.js
+/js/lib/angular-loading-bar.min.js
+
+NETWORK:
+# wildcard to load all other requests
+*
+
+FALLBACK:
+

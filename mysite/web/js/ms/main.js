@@ -1,6 +1,6 @@
 (function(global) {
     var g_app = global.g_app = angular.module('ms_app', [
-        'ngRoute', 'angularTreeview', 'ui-bootstrap'
+        'ngRoute', 'angularTreeview'//, 'ui.bootstrap'
     ]);
 
     g_app.config(['$routeProvider',

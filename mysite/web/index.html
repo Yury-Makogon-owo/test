@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="main" manifest="main.appcache">
+<html lang="en" ng-app="ms_app">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,17 +12,17 @@
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
     <script type="text/javascript" src="js/lib/angular-route.min.js"></script>
     <script type="text/javascript" src="js/lib/angular.treeview.min.js"></script>
-    <script type="text/javascript" src="js/lib/ui.bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lib/ui-bootstrap.min.js"></script>
     <script type="text/javascript" src="js/lib/angular-animate.min.js"></script>
     <script type="text/javascript" src="js/lib/angular-sanitize.min.js"></script>
-    <!--<script type="text/javascript" src="js/lib/ngToast.min.js"></script>-->
-    <script type="text/javascript" src="js/lib/angular-loading-bar.min.js"></script>
     <!-- mysite_app files -->
+    <script type="text/javascript" src="js/ms/main.js"></script>
+    <!--<script type="text/javascript" src="js/lib/angular-sanitize.min.js"></script> -->
 </head>
 
-<body ng-controller="main_controller">
+<body> <!--ng-controller="main_controller">-->
 
-    <div class="container-fluid" ng-controller="navigationController">
+    <script type="text/javascript" src=""<script type="text/javascript" src=""<div class="container-fluid" ng-controller="navigationController">
         <div class="row-fluid clearfix">
             <div class="col-lg-12 column">
                 <nav class="navbar navbar-default navbar-inverse navbar-fixed-top"
@@ -54,7 +54,6 @@
                         <div ng-view>
                         </div>
                     </div>
-                    <toast></toast>
                 </div>
             </div>
         </div>

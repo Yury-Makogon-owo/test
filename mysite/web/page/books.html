@@ -1,21 +1,43 @@
 <div class="" ng-controller="booksController">
-    <div class="page-header">
-        <h1 class="header-inline">Books Search</h1>
-        <div class="row">
-            <div class="input-group col-sm-1 pull-right">
-                <button class="btn btn-default" type="button" ng-click="search()">Search</button>
-            </div>
-            <div class="input-group col-sm-3 pull-right">
-                asd
-            </div>
-            <div class="input-group col-sm-3 pull-right">
-                <span class="input-group-addon">Book name</span>
-                <input class="form-control"
-                    type="text">
-                <span class="input-group-addon">
-                </span>
-            </div>
+  <div class="page-header">
+    <h3 class="header-inline">Books Search</h3>
+    <div class="row">
+      <div class="input-group col-sm-1 pull-right">
+        <button class="btn btn-default" type="button" ng-click="search()">Search</button>
+      </div>
+      <div class="input-group col-sm-3 pull-right">
+        <span class="input-group-addon">Book name</span>
+        <input class="form-control" type="text">
+        <span class="input-group-addon">
+        </span>
         </div>
+      </div>
     </div>
-    <books-table books="books"></books-table>
+    <div class="col-md-10 column">
+      <table class="table table-stripped">
+        <thead>
+          <th> Title </th>
+          <th> Author </th>
+          <th> Current owner </th>
+          <th> Publisher </th>
+          <th> Pages </th>
+          <th> ID </th>
+          <th> Returned </th>
+          <th> Published </th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="book in books">
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.owner.username}}</td>
+            <td>{{book.publisher}}</td>
+            <td>{{book.pages}}</td>
+            <td>{{book.id}}</td>
+            <td>{{book.returned}}</td>
+            <td>{{book.date}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  <books-table books="books"></books-table>
 </div>

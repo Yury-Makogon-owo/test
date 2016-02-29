@@ -1,18 +1,19 @@
-from django.contrib.auth.models import User
 from rest_framework import serializers
 
-from .models import Book
+from .models import Book, Student
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class StudentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = User
+        model = Student
         fields = (
-                'username', 'last_login',
-                'date_joined', 'is_active')
+                'username',
+                'uuid', 'specialization')
 
 class BookSerializer(serializers.HyperlinkedModelSerializer):
+    owner = StudentSerializer()
     class Meta:
         model = Book
         fields = (
-                'date', 'title', 'owner'
+                'date', 'title', 'owner', 'pages', 'id', 'returned',
+                'publisher', 'number', 'author'
                 )

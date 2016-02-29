@@ -13,12 +13,12 @@
     <script type="text/javascript" src="js/lib/angular-sanitize.min.js"></script> -->
     <!-- mysite_app files -->
     <script type="text/javascript" src="js/ms/main.js"></script>
-    <!--<script type="text/javascript" src="js/lib/angular-sanitize.min.js"></script> -->
+    <script type="text/javascript" src="js/ms/books.js"></script>
 </head>
 
 <body> <!--ng-controller="main_controller">-->
 
-    <div class="container-fluid" ng-controller="navigationController">
+    <div class="container-fluid" ng-controller="navigationController as main">
         <div class="row-fluid clearfix">
             <div class="col-lg-12 column">
                 <nav class="navbar navbar-default navbar-inverse navbar-fixed-top"
@@ -40,17 +40,23 @@
                         </ul>
                     </div>
                 </nav>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            Panel title
-                        </h3>
-                    </div>
-                    <div class="panel-body">
-                    </div>
-                </div>
             </div>
         </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="panel-title">
+                    Panel Title
+                </h1>
+            </div>
+            <div class="panel-body">
+                <div ng-view></div>
+            </div>
+        </div>
+
+          <pre>$location.path() = {{main.$location.path()}}</pre>
+          <pre>$route.current.templateUrl = {{main.$route.current.templateUrl}}</pre>
+          <pre>$route.current.params = {{main.$route.current.params}}</pre>
+          <pre>$routeParams = {{main.$routeParams}}</pre>
     </div>
 
 </body>

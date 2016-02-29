@@ -1,7 +1,9 @@
 import atexit
 import logging
 import os
+import sys
 
+sys.path.insert(1, "/usr/share/mysite")
 logger = logging.getLogger(__name__)
 logger.debug('starting...')
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "rest.settings")

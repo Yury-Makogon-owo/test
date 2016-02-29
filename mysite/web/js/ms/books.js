@@ -1,26 +1,15 @@
-angular.module('booksModule', []).
-controller('booksController', ['$scope', '$http', '$timeout',
-    function($scope, $http, $timeout) {
-    $scope.extended = true;
-    $scope.search = function() {
-
-        $http.get('r/lib/books', {
-            params: params
-        }).success(function(response) {
-            $scope.page.updatePages(response.page);
-            // gathering groups from job
-            response.books.forEach(function(elem, index, arr) {
-                elem.groups = [];
-                elem.testResultList.forEach(function(book) {
-                    elem.groups.push(book.title);
-                });
-                elem.groups = elem.groups.filter(function(item, pos, self) {
-                    return self.indexOf(item) == pos;
-                });
-            });
-            $scope.books = response.books;
+angular.module('booksModule',[])
+.controller('booksController',
+    function($scope, $http) {
+      this.name = "BooksController";
+      function update_books() {
+        $http.get("http://localhost/r/lib/book/",{
+          params: "{Content-Type: application/json}"
+        }).
+        success(function(raw_data) {
+          console.log(raw_data)
+          $scope.books = raw_data;
         });
-
-    };
-}]);
-
+      }
+      update_books();
+    });

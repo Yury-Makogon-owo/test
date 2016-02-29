@@ -5,12 +5,11 @@ from views import *
 
 router = DefaultRouter()
 router.register(r'book', BookViewSet)
-router.register(r'user', UserViewSet)
+router.register(r'user', StudentViewSet)
 #router.register(r'book', BookViewSet)
 
 
 urlpatterns = [
     #"",
     url(r'^', include(router.urls)),
-    url(r'^hello/$', index),
 ]

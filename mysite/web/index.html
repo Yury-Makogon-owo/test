@@ -8,12 +8,11 @@
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
     <script type="text/javascript" src="js/lib/angular-route.min.js"></script>
     <script type="text/javascript" src="js/lib/angular.treeview.min.js"></script>
-    <!--<script type="text/javascript" src="js/lib/ui.bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/lib/angular-animate.min.js"></script>
-    <script type="text/javascript" src="js/lib/angular-sanitize.min.js"></script> -->
+    <script type="text/javascript" src="js/lib/jquery-2.2.1.min.js"></script>
     <!-- mysite_app files -->
     <script type="text/javascript" src="js/ms/main.js"></script>
     <script type="text/javascript" src="js/ms/books.js"></script>
+    <script type="text/javascript" src="js/ms/users.js"></script>
 </head>
 
 <body> <!--ng-controller="main_controller">-->
@@ -34,9 +33,6 @@
                             <li>
                                 <a href="#/users">Users</a>
                             </li>
-                            <li>
-                                <a href="#/advanced_search">ADVANCED SEARCH</a>
-                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -52,11 +48,10 @@
                 <div ng-view></div>
             </div>
         </div>
-
-          <pre>$location.path() = {{main.$location.path()}}</pre>
-          <pre>$route.current.templateUrl = {{main.$route.current.templateUrl}}</pre>
-          <pre>$route.current.params = {{main.$route.current.params}}</pre>
-          <pre>$routeParams = {{main.$routeParams}}</pre>
+      <pre>$location.path() = {{main.$location.path()}}</pre>
+      <pre>$route.current.templateUrl = {{main.$route.current.templateUrl}}</pre>
+      <pre>$route.current.params = {{main.$route.current.params}}</pre>
+      <pre>$routeParams = {{main.$routeParams}}</pre>
     </div>
 
 </body>

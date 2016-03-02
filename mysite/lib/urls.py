@@ -4,8 +4,9 @@ from rest_framework.routers import DefaultRouter
 from views import *
 
 router = DefaultRouter()
-router.register(r'book', BookViewSet)
 router.register(r'user', StudentViewSet)
+router.register(r'book', BookViewSet)
+router.register(r'books', BooksViewSet)
 #router.register(r'book', BookViewSet)
 
 

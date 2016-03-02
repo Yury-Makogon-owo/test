@@ -2,16 +2,17 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
+#AbstractBaseUser
 import uuid
 
 def makr_uuid():
     return str(uuid.uuid1().int>>64)
 
 
-class Student(AbstractBaseUser):
+class User(AbstractBaseUser):
     id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=30)
-    uuid = models.CharField(max_length=35, primary_key=True, default=makr_uuid)
+    uuid = models.CharField(max_length=35, default=makr_uuid, unique=True)
     specialization = models.CharField(max_length=20)
 
     def get_username(self):
@@ -21,7 +22,7 @@ class Student(AbstractBaseUser):
 class Book(models.Model):
     date = models.DateTimeField('date of publish')
     title = models.CharField(max_length=200)
-    owner = models.ForeignKey(Student, null=True)
+    owner = models.ForeignKey(User, blank=True, null=True)
     pages = models.IntegerField()
     id = models.CharField(max_length=35, primary_key=True, default=makr_uuid)
     returned = models.DateTimeField(null=True)

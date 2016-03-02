@@ -1,16 +1,16 @@
 var mysiteApp = angular.module('ms_app', [
-        'ngRoute', 'angularTreeview', 'booksModule'
+        'ngRoute', 'angularTreeview', 'booksModule', 'usersModule'
 ]).config(['$routeProvider', '$locationProvider',
         function($routeProvider, $locationProvider) {
-            $routeProvider./*when('/users', {
-                templateUrl: 'page/user.html',
-                controller: 'user_controller'
-            }).*/when('/books', {
+            $routeProvider.when('/users', {
+                templateUrl: 'page/users.html',
+                controller: 'usersController'
+            }).when('/books', {
                 templateUrl: 'page/books.html',
                 controller: 'booksController'
-            })/*.otherwise({
+            }).otherwise({
                 redirectTo: '/'
-            })*/;
+            });
 }
 ]).constant("rest", '/r'
 ).controller('navigationController', [

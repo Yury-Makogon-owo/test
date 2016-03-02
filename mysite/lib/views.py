@@ -7,14 +7,20 @@ from .serializers import *
 
 
 class StudentViewSet(viewsets.ModelViewSet):
-    queryset = Student.objects.all()
-    serializer_class = StudentSerializer
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    #queryset = Student.objects.all()
+    #serializer_class = StudentSerializer
 
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
 
+class BooksViewSet(viewsets.ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BooksSerializer
+
     def list(self, request, *args, **kwargs):
         self.queryset = Book.objects.all()
-        serializer_class = BookSerializer
-        return super(BookViewSet, self).list(request, *args, **kwargs)
+        serializer_class = BooksSerializer
+        return super(BooksViewSet, self).list(request, *args, **kwargs)

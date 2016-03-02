@@ -1,0 +1,21 @@
+<div class="" ng-controller="booksController">
+  <div class="page-header">
+    <h3 class="header-inline">Users</h3>
+    <div class="col-md-10 column">
+      <table class="table table-stripped">
+        <thead>
+          <th> Name </th>
+          <th> ID </th>
+          <th> group </th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="user in users">
+            <td>{{user.username}}</td>
+            <td>{{user.uuid}}</td>
+            <td>{{user.specialization}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  <users-table users="users"></users-table>
+</div>
